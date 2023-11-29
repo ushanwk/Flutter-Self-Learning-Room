@@ -61,7 +61,14 @@ class MyHomePage extends StatelessWidget {
             color: Colors.white,
           ),
         ],
-        flexibleSpace: Image.asset("assest/bg.jpeg", fit: BoxFit.cover,),
+        flexibleSpace: Image.asset(
+          "assest/bg.jpeg",
+          fit: BoxFit.cover,
+        ),
+        bottom: PreferredSize(
+          child: Container(),
+          preferredSize: Size.fromHeight(70),
+        ),
       ),
     );
   }
