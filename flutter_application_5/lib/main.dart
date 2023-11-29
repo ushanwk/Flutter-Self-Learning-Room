@@ -5,11 +5,9 @@ void main(){
 }
 
 class myApp extends StatelessWidget {
-  const myApp({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'My App',
       home: homePage(),
     );
@@ -17,7 +15,12 @@ class myApp extends StatelessWidget {
 }
 
 class homePage extends StatelessWidget {
-  const homePage({super.key});
+  int count = 0;
+
+  void increment(){
+    count++;
+    print(count);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,21 +28,21 @@ class homePage extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 80,
         backgroundColor: Colors.blue,
-        title: const Text('My Sample App', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+        title: Text('My Sample App', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('You have pressed the button', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
-            Text('0', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35),),
+            Text('You have pressed the button', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),),
+            Text('$count', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 65),),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add, color: Colors.white, size: 40,),
         backgroundColor: Colors.blue,
-        onPressed: (){},
+        onPressed: increment,
+        child: Icon(Icons.add, color: Colors.white, size: 40,),
       ),
     );
   }
