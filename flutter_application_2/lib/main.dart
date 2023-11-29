@@ -73,7 +73,7 @@ class MyHomePage extends StatelessWidget {
                   icon: Icon(
                     Icons.directions_car,
                     color: Colors.white,
-                  )
+                  ),
               ),
               Tab(
                   icon: Icon(
