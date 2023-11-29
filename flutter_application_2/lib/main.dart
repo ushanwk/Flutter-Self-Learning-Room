@@ -4,11 +4,10 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-
-      DevicePreview(
-        enabled: !kReleaseMode,
-        builder: (context) => MyApp(), // Wrap your app
-      ),
+    DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (context) => MyApp(), // Wrap your app
+    ),
   );
 }
 
@@ -19,6 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
       title: 'Flutter Demo',
@@ -42,24 +42,22 @@ class MyHomePage extends StatelessWidget {
           backgroundColor: Colors.lightBlue,
           title: const Text(
             "My App Bar",
-            style: (
-                TextStyle(color: Colors.white)
-            ),
+            style: (TextStyle(color: Colors.white)),
           ),
           leading: IconButton(
             icon: Icon(Icons.menu),
             color: Colors.white,
-            onPressed: (){},
+            onPressed: () {},
           ),
           actions: [
             IconButton(
-                onPressed: (){},
-                icon: Icon(Icons.search),
-                color: Colors.white,
+              onPressed: () {},
+              icon: Icon(Icons.search),
+              color: Colors.white,
             ),
             IconButton(
-                onPressed: (){},
-                icon: Icon(Icons.more_vert),
+              onPressed: () {},
+              icon: Icon(Icons.more_vert),
               color: Colors.white,
             ),
           ],
@@ -70,23 +68,21 @@ class MyHomePage extends StatelessWidget {
           bottom: const TabBar(
             tabs: [
               Tab(
-                  icon: Icon(
-                    Icons.directions_car,
-                    color: Colors.white,
-                  ),
+                icon: Icon(
+                  Icons.directions_car,
+                  color: Colors.white,
+                ),
               ),
               Tab(
                   icon: Icon(
-                    Icons.directions_transit,
-                    color: Colors.white,
-                  )
-              ),
+                Icons.directions_transit,
+                color: Colors.white,
+              )),
               Tab(
                   icon: Icon(
-                    Icons.directions_bike,
-                    color: Colors.white,
-                  )
-              ),
+                Icons.directions_bike,
+                color: Colors.white,
+              )),
             ],
             indicatorColor: Colors.white,
           ),
@@ -102,21 +98,30 @@ class MyHomePage extends StatelessWidget {
     );
   }
 
-  Widget tab1(){
+  Widget tab1() {
     return const Center(
-      child: Text('Hello Car', style: TextStyle(color: Colors.black, fontSize: 30),),
+      child: Text(
+        'Hello Car',
+        style: TextStyle(color: Colors.black, fontSize: 30),
+      ),
     );
   }
 
-  Widget tab2(){
+  Widget tab2() {
     return const Center(
-      child: Text('Hello Train', style: TextStyle(color: Colors.black, fontSize: 30),),
+      child: Text(
+        'Hello Train',
+        style: TextStyle(color: Colors.black, fontSize: 30),
+      ),
     );
   }
 
-  Widget tab3(){
+  Widget tab3() {
     return const Center(
-      child: Text('Hello Bicycle', style: TextStyle(color: Colors.black, fontSize: 30),),
+      child: Text(
+        'Hello Bicycle',
+        style: TextStyle(color: Colors.black, fontSize: 30),
+      ),
     );
   }
 }
