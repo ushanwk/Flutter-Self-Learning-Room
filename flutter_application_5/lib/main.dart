@@ -14,14 +14,22 @@ class myApp extends StatelessWidget {
   }
 }
 
-class homePage extends StatelessWidget {
+class homePage extends StatefulWidget {
+  const homePage({super.key});
+
+  @override
+  State<homePage> createState() => _homePageState();
+}
+
+class _homePageState extends State<homePage> {
   int count = 0;
 
   void increment(){
-    count++;
-    print(count);
+    setState(() {
+      count++;
+      print(count);
+    });
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,4 +55,3 @@ class homePage extends StatelessWidget {
     );
   }
 }
-
