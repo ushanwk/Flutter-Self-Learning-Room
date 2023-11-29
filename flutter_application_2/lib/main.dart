@@ -88,16 +88,35 @@ class MyHomePage extends StatelessWidget {
                   )
               ),
             ],
+            indicatorColor: Colors.white,
           ),
         ),
-        body: const TabBarView(
+        body: TabBarView(
           children: [
-            Icon(Icons.directions_car),
-            Icon(Icons.directions_transit),
-            Icon(Icons.directions_bike),
+            tab1(),
+            tab2(),
+            tab3(),
           ],
         ),
       ),
+    );
+  }
+
+  Widget tab1(){
+    return const Center(
+      child: Text('Hello Car', style: TextStyle(color: Colors.black, fontSize: 30),),
+    );
+  }
+
+  Widget tab2(){
+    return const Center(
+      child: Text('Hello Train', style: TextStyle(color: Colors.black, fontSize: 30),),
+    );
+  }
+
+  Widget tab3(){
+    return const Center(
+      child: Text('Hello Bicycle', style: TextStyle(color: Colors.black, fontSize: 30),),
     );
   }
 }
