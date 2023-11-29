@@ -41,6 +41,7 @@ class MyHomePage extends StatelessWidget {
           shadowColor: Colors.white,
       ),
       body: Container(
+        padding: const EdgeInsets.all(30),
         height: double.infinity,
         width: double.infinity,
         color: Colors.grey,
