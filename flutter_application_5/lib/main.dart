@@ -36,6 +36,11 @@ class homePage extends StatelessWidget {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add, color: Colors.white, size: 40,),
+        backgroundColor: Colors.blue,
+        onPressed: (){},
+      ),
     );
   }
 }
