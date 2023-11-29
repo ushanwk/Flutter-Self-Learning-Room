@@ -1,10 +1,9 @@
-import 'dart:ffi';
-
 import 'package:device_preview/device_preview.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main(){
   runApp(
     DevicePreview(
       enabled: !kReleaseMode,
@@ -14,15 +13,14 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        brightness: Brightness.dark,
-        primarySwatch: Colors.orange,
+        brightness: Brightness.light,
+        primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
     );
@@ -34,23 +32,13 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black87,
-        title: const Text('My Sample App', style: TextStyle(color: Colors.white),),
-        toolbarHeight: 80,
-          elevation: 20,
-          shadowColor: Colors.white,
+        title: const Text('My App', style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold,),),
+        backgroundColor: Colors.blue,
+        toolbarHeight: 60,
       ),
-      body: Container(
-        padding: const EdgeInsets.all(30),
-        height: double.infinity,
-        width: double.infinity,
-        color: Colors.grey,
-        child: const Text(
-          'Ushan Kauhalya',
-          style: TextStyle(fontSize: 20),
-        ),
+      body: const Column(
+        children: [],
       ),
     );
   }
-
 }
