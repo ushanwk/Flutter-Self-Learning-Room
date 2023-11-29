@@ -36,8 +36,32 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Colors.blue,
         toolbarHeight: 60,
       ),
-      body: const Column(
-        children: [],
+      // body: Container(
+      //   color: Colors.red,
+      //   width: double.infinity,
+      //   child: const Column(
+      //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //     crossAxisAlignment: CrossAxisAlignment.center,
+      //     children: [
+      //       Text('Text 1', style: (TextStyle(fontSize: 20)),),
+      //       Text('Text 2', style: (TextStyle(fontSize: 20)),),
+      //       Text('Text 3', style: (TextStyle(fontSize: 20)),),
+      //     ],
+      //   ),
+      // ),
+      body: Container(
+        color: Colors.red,
+        width: double.infinity,
+        height: 100,
+        child: const Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text('Text 1', style: (TextStyle(fontSize: 20)),),
+            Text('Text 2', style: (TextStyle(fontSize: 20)),),
+            Text('Text 3', style: (TextStyle(fontSize: 20)),),
+          ],
+        ),
       ),
     );
   }
