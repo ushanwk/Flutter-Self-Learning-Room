@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.orangeAccent),
+        brightness: Brightness.dark
       ),
       home: homePage(),
     );
@@ -29,7 +29,7 @@ class homePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Flutter Demo',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         toolbarHeight: 80,
         backgroundColor: Colors.orangeAccent,
