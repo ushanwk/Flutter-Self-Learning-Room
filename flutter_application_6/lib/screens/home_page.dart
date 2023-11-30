@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_6/screens/second_screen.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({required this.title});
@@ -32,7 +32,11 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: (){
+          Navigator.of(context).push(MaterialPageRoute(builder: (_){
+            return SecondScreen();
+          }));
+        },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
