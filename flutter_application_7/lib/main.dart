@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
 }
 
 class homePage extends StatelessWidget {
-  const homePage({super.key});
-
+  var items = List<String>.generate(100, (index) => 'Item $index');
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,39 +35,52 @@ class homePage extends StatelessWidget {
         toolbarHeight: 80,
         backgroundColor: Colors.orangeAccent,
       ),
-      body: ListView(
-        padding: EdgeInsets.all(10),
-        children: [
-          ListTile(
-            leading: Icon(Icons.access_alarm, size: 40,),
-            title: Text('Alarm', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
-            subtitle: Text('Set your Alarm'),
-            trailing: Icon(Icons.menu),
-          ),
-          Divider(),
-          ListTile(
-            leading: Icon(Icons.brightness_5, size: 40,),
-            title: Text('Bightness', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
-            subtitle: Text('Set your Brightness'),
-            trailing: Icon(Icons.menu),
-          ),
-          Divider(),
-          ListTile(
-            leading: Icon(Icons.access_time, size: 40,),
-            title: Text('Time', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
-            subtitle: Text('Set your Time'),
-            trailing: Icon(Icons.menu),
-          ),
-          Divider(),
-          ListTile(
-            leading: Icon(Icons.date_range, size: 40,),
-            title: Text('Date', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
-            subtitle: Text('Set your Date'),
-            trailing: Icon(Icons.menu),
-          ),
-          
-        ],
-      )
+
+
+      // body: ListView(
+      //   scrollDirection: Axis.vertical,
+      //   padding: EdgeInsets.all(10),
+      //   children: [
+      //     ListTile(
+      //       leading: Icon(Icons.access_alarm, size: 40,),
+      //       title: Text('Alarm', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+      //       subtitle: Text('Set your Alarm'),
+      //       trailing: Icon(Icons.menu),
+      //     ),
+      //     Divider(),
+      //     ListTile(
+      //       leading: Icon(Icons.brightness_5, size: 40,),
+      //       title: Text('Bightness', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+      //       subtitle: Text('Set your Brightness'),
+      //       trailing: Icon(Icons.menu),
+      //     ),
+      //     Divider(),
+      //     ListTile(
+      //       leading: Icon(Icons.access_time, size: 40,),
+      //       title: Text('Time', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+      //       subtitle: Text('Set your Time'),
+      //       trailing: Icon(Icons.menu),
+      //     ),
+      //     Divider(),
+      //     ListTile(
+      //       leading: Icon(Icons.date_range, size: 40,),
+      //       title: Text('Date', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+      //       subtitle: Text('Set your Date'),
+      //       trailing: Icon(Icons.menu),
+      //     ),
+      //
+      //   ],
+      // )
+
+      body: ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (context, index){
+            return ListTile(
+              title: Text(items[index]),
+            );
+          }
+      ),
+
     );
   }
 }
