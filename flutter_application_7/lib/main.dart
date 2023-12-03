@@ -35,28 +35,59 @@ class homePage extends StatelessWidget {
         toolbarHeight: 80,
         backgroundColor: Colors.orangeAccent,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              width: double.infinity,
-              height: 250,
-              color: Colors.white,
-            ),
-            Container(
-              width: double.infinity,
-              height: 250,
-              color: Colors.yellow,
-            ),
-            Container(
-              width: double.infinity,
-              height: 293,
-              color: Colors.red,
-            ),
-          ],
-        ),
-      ),
+      body: ListView(
+        padding: EdgeInsets.all(10),
+        children: [
+          ListTile(
+            leading: Icon(Icons.access_alarm, size: 40,),
+            title: Text('Alarm', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+            subtitle: Text('Set your Alarm'),
+            trailing: Icon(Icons.menu),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.access_alarm, size: 40,),
+            title: Text('Alarm', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+            subtitle: Text('Set your Alarm'),
+            trailing: Icon(Icons.menu),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.access_alarm, size: 40,),
+            title: Text('Alarm', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+            subtitle: Text('Set your Alarm'),
+            trailing: Icon(Icons.menu),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.access_alarm, size: 40,),
+            title: Text('Alarm', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+            subtitle: Text('Set your Alarm'),
+            trailing: Icon(Icons.menu),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.access_alarm, size: 40,),
+            title: Text('Alarm', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+            subtitle: Text('Set your Alarm'),
+            trailing: Icon(Icons.menu),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.access_alarm, size: 40,),
+            title: Text('Alarm', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+            subtitle: Text('Set your Alarm'),
+            trailing: Icon(Icons.menu),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.access_alarm, size: 40,),
+            title: Text('Alarm', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+            subtitle: Text('Set your Alarm'),
+            trailing: Icon(Icons.menu),
+          ),
+        ],
+      )
     );
   }
 }
