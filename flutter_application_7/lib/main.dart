@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         brightness: Brightness.dark
@@ -35,9 +36,25 @@ class homePage extends StatelessWidget {
         backgroundColor: Colors.orangeAccent,
       ),
       body: Center(
-        child: Text(
-          'Sample List View',
-          style: TextStyle(color: Colors.orangeAccent, fontSize: 30, fontWeight: FontWeight.bold),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: double.infinity,
+              height: 250,
+              color: Colors.white,
+            ),
+            Container(
+              width: double.infinity,
+              height: 250,
+              color: Colors.yellow,
+            ),
+            Container(
+              width: double.infinity,
+              height: 293,
+              color: Colors.red,
+            ),
+          ],
         ),
       ),
     );
