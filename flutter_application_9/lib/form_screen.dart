@@ -8,6 +8,8 @@ class Form_Screen extends StatefulWidget {
 }
 
 class _Form_ScreenState extends State<Form_Screen> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,12 +21,28 @@ class _Form_ScreenState extends State<Form_Screen> {
               fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
         )),
       ),
-      body: Container(
-        margin: const EdgeInsets.all(20),
-        child: const Column(
-          children: <Widget>[
-            
-          ],
+      body: SingleChildScrollView(
+        child: Form(
+          key: _formKey,
+          child: Container(
+            margin: const EdgeInsets.all(20),
+            child: Column(
+              children: <Widget>[
+                TextFormField(
+                  maxLength: 30,
+                  decoration: const InputDecoration(
+                    hintText: 'Your name',
+                  ),
+                  validator: (text) {
+                    if (text!.isEmpty) {
+                      return 'Name can not be empty';
+                    }
+                    return null;
+                  },
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
