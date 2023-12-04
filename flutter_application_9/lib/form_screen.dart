@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class Form_Screen extends StatefulWidget {
   const Form_Screen({super.key});
 
@@ -7,8 +8,11 @@ class Form_Screen extends StatefulWidget {
   State<Form_Screen> createState() => _Form_ScreenState();
 }
 
+// ignore: camel_case_types
 class _Form_ScreenState extends State<Form_Screen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  // ignore: unused_field
+  String _name = "";
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +43,26 @@ class _Form_ScreenState extends State<Form_Screen> {
                     }
                     return null;
                   },
+                  onSaved: (text) {
+                    _name = text!;
+                  },
+                ),
+                const SizedBox(
+                  height: 50,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      _formKey.currentState?.save();
+                      print(_name);
+                    }
+                  },
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blueAccent),
+                  child: const Text(
+                    'Save',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ],
             ),
