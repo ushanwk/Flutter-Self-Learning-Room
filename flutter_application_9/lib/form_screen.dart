@@ -14,6 +14,24 @@ class _Form_ScreenState extends State<Form_Screen> {
   // ignore: unused_field
   String _name = "";
 
+  Widget _buildNameField() {
+    return TextFormField(
+      maxLength: 30,
+      decoration: const InputDecoration(
+        hintText: 'Your name',
+      ),
+      validator: (text) {
+        if (text!.isEmpty) {
+          return 'Name can not be empty';
+        }
+        return null;
+      },
+      onSaved: (text) {
+        _name = text!;
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,21 +50,7 @@ class _Form_ScreenState extends State<Form_Screen> {
             margin: const EdgeInsets.all(20),
             child: Column(
               children: <Widget>[
-                TextFormField(
-                  maxLength: 30,
-                  decoration: const InputDecoration(
-                    hintText: 'Your name',
-                  ),
-                  validator: (text) {
-                    if (text!.isEmpty) {
-                      return 'Name can not be empty';
-                    }
-                    return null;
-                  },
-                  onSaved: (text) {
-                    _name = text!;
-                  },
-                ),
+                _buildNameField(),
                 const SizedBox(
                   height: 50,
                 ),
